@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sanjay's Blog</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            flex: 1;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content img {
+            width: 100%; /* Adjust to fit the container */
+            max-width: 500px; /* Optional: set maximum width */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Center image if container is centered */
+            margin: 0 auto; /* Center image horizontally */
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Sanjay's Blog</h1>
+    </header>
+    <nav>
+        <a href="{% url 'home_page' %}">Home</a>
+        <a href="{% url 'index' %}">Posts</a>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>About This Blog</h2>
+            {% load static %}
+            <img src="{% static 'images/ruffy.jpeg' %}">
+            <p>Hello all! This is a blog where you can read various posts on different topics. Feel free to browse and enjoy the content!</p>
+            <p>This is a place for all those nerds and goofs like me just to dive in and look at people in general talk and think about stuff.<br>
+            You might find someone who has similar opinion to you or different, enjoy diving in!!</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sanjay's Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
